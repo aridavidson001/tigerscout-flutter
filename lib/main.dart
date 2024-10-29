@@ -52,6 +52,7 @@ class MyHomePage extends StatefulWidget {
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
+
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -189,8 +190,13 @@ class SettingsContent extends StatelessWidget {
     
   }
 }
+class Settings extends StatefulWidget {
 
-class Settings extends StatelessWidget {
+  @override
+  State<Settings> createState() => _SettingsState();
+
+}
+class _SettingsState extends State<Settings> {
   
   int brightnesSettings = 50;
   int volumeSettings = 0;
@@ -204,8 +210,11 @@ class Settings extends StatelessWidget {
           label: "Brightness",   
           value: brightnesSettings.toDouble(),
           onChanged: (value) {
-                brightnesSettings = value.toInt(); 
-                
+              setState(() {
+                  brightnesSettings = value.toInt(); 
+
+              });
+
           },  
           min: 0.0,
           max: 100.0,
@@ -214,7 +223,10 @@ class Settings extends StatelessWidget {
           label: "Volume",
           value: volumeSettings.toDouble(),
           onChanged: (value) {
-                volumeSettings = value.toInt(); 
+            setState(() {
+                  volumeSettings = value.toInt(); 
+
+            });
            
           },
           min: 0,
