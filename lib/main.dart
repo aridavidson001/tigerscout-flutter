@@ -201,14 +201,14 @@ class Settings extends StatelessWidget {
     return Column(
       children: [
         Slider(
-          label: "Brightness",
-          
+          label: "Brightness",   
           value: brightnesSettings.toDouble(),
           onChanged: (value) {
                 brightnesSettings = value.toInt(); 
-          },
-          min: 0,
-          max: 100,
+                
+          },  
+          min: 0.0,
+          max: 100.0,
            ),
            Slider(
           label: "Volume",
