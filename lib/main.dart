@@ -184,17 +184,14 @@ class SettingsContent extends StatelessWidget {
   Widget build(BuildContext context) {
 
   
-    return Brightness();
+    return Settings();
 
     
   }
 }
 
-class Brightness extends StatelessWidget {
+class Settings extends StatelessWidget {
   
-  const Brightness({
-    super.key,
-  });
   int brightnesSettings = 50;
   int volumeSettings = 0;
   @override
@@ -239,24 +236,45 @@ class DataAnalysisPage extends StatelessWidget {
     );
 
     // TODO: add data analysis
-    return Center(
-      child: Card(
-        color: theme.colorScheme.primary,  
-        child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Text("Coming Soon!", style: style),
-        )
-      ),
-    );
+    return comingSoon(theme, style);
     }
+
+  Center comingSoon(ThemeData theme, TextStyle style) {
+    return Center(
+    child: Card(
+      color: theme.colorScheme.primary,  
+      child: Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Text("Coming Soon!", style: style),
+      )
+    ),
+  );
+  }
 }
 // ...
 
 class ScoutPage extends StatelessWidget {
+   
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);    
+
+    final style = theme.textTheme.displayMedium!.copyWith(
+      color: theme.colorScheme.onPrimary,
+    );
     // TODO: add scout page
-    return Placeholder();
+    return comingSoon(theme, style);
+  }
+  Center comingSoon(ThemeData theme, TextStyle style) {
+    return Center(
+    child: Card(
+      color: theme.colorScheme.primary,  
+      child: Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Text("Coming Soon!", style: style),
+      )
+    ),
+  );
   }
 }
 
